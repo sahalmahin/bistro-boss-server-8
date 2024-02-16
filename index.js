@@ -26,8 +26,6 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    // Connect the client to the server	(optional starting in v4.7)
-    // await client.connect();
 
     const userCollection = client.db("bistroDb").collection("users");
     const menuCollection = client.db("bistroDb").collection("menu");
@@ -336,16 +334,3 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Bistro boss is sitting on port ${port}`);
 })
-
-/**
- * --------------------------------
- *      NAMING CONVENTION
- * --------------------------------
- * app.get('/users')
- * app.get('/users/:id')
- * app.post('/users')
- * app.put('/users/:id')
- * app.patch('/users/:id')
- * app.delete('/users/:id')
- * 
-*/
